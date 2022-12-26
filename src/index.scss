@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+$red: #A10035;
+$green: #68B984;
+$purple: #2A0944;
+$sky: #3FA796;
+$yellow: #FEC260;
+$background: rgb(25 25 25);
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9));
+    background-position: center;
+    background-size: cover;
+    color: $yellow;
+    main {
+        width: 100%;
+        padding: 20px 50px;
+        header {
+            width: 100%;
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                text-decoration: none;
+                h1 {
+                    font-size: 30px;
+                    color: $yellow;
+                    span {
+                        color: $red;
+                        letter-spacing: -2px;
+                        font-size: 16px;
+                    }
+                }
+                img {
+                    width: 50px;
+                }
+            }
+            .title {
+                margin: 20px 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                h1 {
+                    font-size: 25px;
+                    margin-bottom: 10px;
+                }
+                .btn {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    input {
+                        width: 500px;
+                        font-size: 16px;
+                        padding: 8px 10px;
+                        border: none;
+                        outline: none;
+                        background: $yellow;
+                        color: $red;
+                        border-radius: 5px;
+                        &::first-letter {
+                            text-transform: uppercase;
+                        }
+                        &::placeholder {
+                            color: $red;
+                            opacity: .5;
+                        }
+                    }
+                    button {
+                        margin-left: 10px;
+                        font-size: 14px;
+                        padding: 8px 10px;
+                        border: none;
+                        outline: none;
+                        color: $red;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        background: $green;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        &:hover {
+                            box-shadow: 0px 3px 10px $green;
+                        }
+                    }
+                }
+                h2 {
+                    margin-top: 20px;
+                    font-size: 18px;
+                    span {
+                        color: $green;
+                    }
+                }
+            }
+        }
+        .loading {
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .in {
+                width: 50px;
+                height: 50px;
+                background: transparent;
+                border-radius: 50%;
+                border: 5px solid $yellow;
+                opacity: .1;
+                position: relative;
+            }
+            .out {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background: transparent;
+                border: 5px solid $yellow;
+                border-radius: 50%;
+                border-bottom: 5px solid transparent;
+                border-top: 5px solid transparent;
+                border-left: 5px solid $yellow;
+                // box-shadow: inset 0px 1px 10px $yellow;
+                animation: rotate 1s linear infinite;
+                @keyframes rotate {
+                    0% {
+                        transform: rotate(0deg);
+                    } 100% {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        footer {
+            margin-top: 30px;
+            .credit {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                p {
+                    a {
+                        text-decoration: none;
+                        color: $green;
+                        transition: 2s;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    main {
+        padding: 20px 5px;
+    }
+    header {
+        .title {
+            .btn {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 10px;
+                input {
+                    width: 100%;
+                    margin: auto;
+                }
+                button { 
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}

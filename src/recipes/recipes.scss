@@ -1,0 +1,96 @@
+$red: #A10035;
+$green: #68B984;
+$purple: #2A0944;
+$sky: #3FA796;
+$yellow: #FEC260;
+$background: rgb(25 25 25);
+
+.recipe {
+    width: 900px;
+    max-width: 900px;
+    margin: 20px 10px;
+    background: transparent;
+    border: 3px solid $yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    border-radius: 5px;
+    .left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        h1 {
+            position: absolute;
+            background: $yellow;
+            color: $red;
+            top: 0;
+            left: 0;
+            transform: translate(20px, -10px);
+            font-size: 18px;
+            padding: 0 5px;
+            border-radius: 5px;
+        }
+        img {
+            border-radius: 5px;
+        }
+    }
+    .right {
+        width: 50%;
+        h1 {
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: $red;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 840px) {
+    .recipe {
+        flex-direction: column;
+        .right {
+            h1 {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+@media (max-width: 620px) {
+    .recipe {
+        .left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            h1 {
+                position: absolute;
+                transform: none;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .recipe {
+        width: 100%;
+        margin: 10px;
+        padding: 5px;
+        .left {
+            width: 100%;
+            h1 { 
+
+            }
+            img {
+                width: 100%;
+            }
+        }
+        .right {
+            width: 100%;
+
+        }
+    }
+}
