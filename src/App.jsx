@@ -46,10 +46,10 @@ const App = () => {
                 <div className="title">
                     <h1>Food Recipe</h1>
                     <form className="btn" onSubmit={ value.length <= 0 ? enterNothing : createSearch}>
-                        <input id="input" type="text" placeholder="Search name of food..." value={value} onChange={(e) => setValue(e.target.value)} onKeyPress={presskeyNothing}/>
+                        <input id="input" type="text" placeholder="Search name of food..." value={value} onChange={(e) => setValue(e.target.value)} onKeyPress={presskeyNothing} autoComplete="off"/>
                         <button type="submit" onClick={enterNothing}>find</button>
                     </form>
-                    <h2 style={{display: show === true ? "" : "none"}}>The result of <span>{query}</span> is showing...</h2>
+                    <h2 style={{display: show === true ? "" : "none"}}>The result of <span>{query}</span> is being shown...</h2>
                 </div>
             </header>
             <div className="loading" style={{display: recipes.length <= 0 ? "" : "none"}}>
